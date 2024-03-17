@@ -3,6 +3,8 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = @employee_fetcher.page(page_params).all
+    @current_page = page_params.to_i
+    @total_pages = @employee_fetcher.total_pages
   end
 
   def show
@@ -16,6 +18,6 @@ class EmployeesController < ApplicationController
   end
 
   def page_params
-    params.require(:page) if params[:page]
+    params[:page] ? params.require(:page) : 1
   end
 end

@@ -23,6 +23,11 @@ module Reqres
       nil
     end
 
+    def total_pages
+      response = self.class.get("/users", @options)
+      response["total_pages"]
+    end
+
     def page(page = 1)
       @options = { query: { page: page } }
 

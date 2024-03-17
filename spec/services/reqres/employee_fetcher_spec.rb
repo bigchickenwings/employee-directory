@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Reqres::EmployeeFetcher do
-  context ".all" do
+  context "#all" do
     it "fetches the amount of employees per_page and on page" do
       employees = described_class.new(page: 1, per_page: 6)
 
@@ -24,7 +24,7 @@ RSpec.describe Reqres::EmployeeFetcher do
     end
   end
 
-  context ".find" do
+  context "#find" do
     it "fetches a single employee by id" do
       employees = described_class.new
 
@@ -39,6 +39,14 @@ RSpec.describe Reqres::EmployeeFetcher do
       desired_employee = employees.find(999)
 
       expect(desired_employee).to eq(nil)
+    end
+  end
+
+  context "#total_pages" do
+    it "fetches the total number of pages" do
+      employees = described_class.new
+      
+      expect(employees.total_pages).to eq(2)
     end
   end
 end
