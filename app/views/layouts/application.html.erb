@@ -11,6 +11,9 @@
   </head>
 
   <body class="has-background-light">
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <div class="content pt-5">
+      <%= yield %>
+    </div>
   </body>
 </html>
