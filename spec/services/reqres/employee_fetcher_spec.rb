@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Reqres::EmployeeFetcher do
@@ -44,9 +46,9 @@ RSpec.describe Reqres::EmployeeFetcher do
 
   context "#total_pages" do
     it "fetches the total number of pages" do
-      employees = described_class.new
+      employees = described_class.new(per_page: 999)
       
-      expect(employees.total_pages).to eq(2)
+      expect(employees.total_pages).to eq(1)
     end
   end
 end
