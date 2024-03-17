@@ -27,3 +27,12 @@ body {
 .tag {
   width: 60px;
 }
+
+.visible-when-hovering {
+  opacity: 0;
+}
+
+a:hover .visible-when-hovering {
+  opacity: 1;
+}
+

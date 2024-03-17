@@ -1,0 +1,40 @@
+<div class="content container">
+  <h2>Employees</h2>
+  <table class="table card is-hoverable">
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <th>
+            <%= link_to employee_path(employee.id), class: "w-100 is-flex is-align-items-center" do %>
+              <figure class="image is-48x48 ml-0 mr-5 my-0">
+                <img class="is-rounded" src=<%= employee.avatar %>>
+              </figure>
+              <div class="columns w-100">
+                <span class="mt-3 tag is-success is-light">Online</span>
+                <span class="column is-2 has-text-black"><%= "#{employee.first_name} #{employee.last_name}" %></span>
+                <span class="column is-2 has-text-weight-normal"><%= employee.email %></span>
+                <div class="column has-text-grey has-text-weight-semibold is-flex is-align-items-center is-justify-content-end pr-5 visible-when-hovering">
+                  <span>Visit profile</span>
+                  <%= image_tag("go-to.svg", width: 18, class: "ml-2") %>
+                </div>
+              </div>
+
+            <% end %>
+          </th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br/>
+
+  <div class="pb-5 has-text-centered">
+    <p class="is-size-7 has-text-weight-semibold has-text-grey-light">CURRENT PAGE</p>
+    <% (1..@total_pages).each do |page| %>
+      <%= link_to employees_path(page:), class: "button is-small is-black #{'is-outlined' if @current_page != page}" do %>
+        <%= page %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
