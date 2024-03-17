@@ -36,3 +36,15 @@ a:hover .visible-when-hovering {
   opacity: 1;
 }
 
+.is-rounded-small {
+  border-radius: 8px;
+}
+
+.flip {
+  transform: rotate(-0.5turn);
+}
+
+.br-2 {
+  border-right: 2px solid #f5f5f5;
+}
+

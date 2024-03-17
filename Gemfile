@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+gem "faker"
 gem "httparty"
 gem "importmap-rails"
 gem "jbuilder"

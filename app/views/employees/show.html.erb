@@ -1,0 +1,40 @@
+<%= link_to :back, class: "has-text-grey has-text-weight-semibold is-flex is-align-items-center mb-5" do %>
+  <%= image_tag("go-to.svg", width: 18, class: "mr-2 flip") %>
+  Go back
+<% end %>
+
+<div class="card p-5">
+  <div class="is-flex">
+    <figure class="image is-128x128 ml-0 mr-5 my-0">
+      <%= image_tag(@employee.avatar, class: "is-rounded-small") %>
+    </figure>
+    <div class="mt-4">
+      <div class="is-flex is-align-items-center mb-2">
+        <h2 class="m-0"><%= "#{@employee.first_name} #{@employee.last_name}" %></h2>
+        <span class="tag is-success is-light has-text-weight-semibold ml-2 mt-1">Online</span>
+      </div>
+      <h6 class="has-text-grey-light mb-2">Ruby on Rails Developer</h6>
+      <p class="has-text-weight-normal is-size-6"><%= @employee.email %></p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="columns">
+    <div class="column pr-5 mr-5 br-2 has-text-justified">
+      <h4>Bio</h4>
+      <p><%= Faker::Lorem.paragraph_by_chars(number: 512, supplemental: false) %></p>
+    </div>
+
+    <div class="column">
+      <h4>Highlights</h4>
+      <ul>
+        <li><%= Faker::Lorem.sentence(word_count: 3) %></li>
+        <li><%= Faker::Lorem.sentence(word_count: 3) %></li>
+        <li><%= Faker::Lorem.sentence(word_count: 3) %></li>
+        <li><%= Faker::Lorem.sentence(word_count: 3) %></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
