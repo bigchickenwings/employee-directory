@@ -1,24 +1,17 @@
-# README
+# Kajabi Employees Directory
+This is a take-home exercise requested by Kajabi.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+- Run `bundle install`
 
-Things you may want to cover:
+## Initializing the app
+- Run `rails server`
+- Open `localhost:3000` on your browser
 
-* Ruby version
+## Running the tests
+- Run `rspec` after setting up the app
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Available routes
+- `/`: `employees#index`
+- `/employees`: `employees#index`
+- `/employees/:id`: `employees#show`
