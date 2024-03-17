@@ -21,4 +21,8 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
+  config.ignore_request do |request|
+    uri = URI(request.uri)
+    uri.host == '127.0.0.1' && uri.port > 3000
+  end
 end
